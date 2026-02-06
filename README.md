@@ -1,5 +1,10 @@
-# Ping Exfiltration Framework
+# 📡 Ping Exfiltration Framework
+![Status](https://img.shields.io/badge/Status-Operational-brightgreen)
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![Go](https://img.shields.io/badge/Go-1.20+-cyan)
+![Platform](https://img.shields.io/badge/Platform-Windows%20|%20Linux-lightgrey)
 
+**A covert ICMP-only Command & Control framework for Red Team operations.**
 A covert Command & Control (C2) framework that uses ICMP packets (Ping) for communication. This project allows you to execute commands and exfiltrate files from agents behind strict firewalls that allow ICMP traffic.
 
 ## Features
