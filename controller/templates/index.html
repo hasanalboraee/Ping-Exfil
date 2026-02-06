@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PING EXFILTRATION // C2</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="scanlines"></div>
+    
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="prefix">ROOT@C2</span>
+                <span class="separator">:</span>
+                <span class="path">~/PING-EXFIL</span>
+                <span class="cursor">_</span>
+            </div>
+            <div class="status-bar">
+                <span id="connection-status" class="status offline">DISCONNECTED</span>
+                <span id="clock">00:00:00</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="panel agents-panel">
+                <div class="panel-header">
+                    <h3>AGENTS</h3>
+                    <span class="count">[0]</span>
+                </div>
+                <div class="panel-content" id="agents-list">
+                    <!-- Agents will be injected here -->
+                    <div class="empty-state">NO AGENTS DETECTED...</div>
+                </div>
+            </div>
+
+            <div class="panel central-panel">
+                <div class="panel-header">
+                    <h3>COMMAND CONSOLE</h3>
+                </div>
+                <div class="terminal-window" id="terminal-output">
+                    <div class="line system">Initializing C2 framework...</div>
+                    <div class="line system">Listening for ICMP traffic...</div>
+                </div>
+                <div class="command-input">
+                    <span class="prompt">root@<span id="selected-agent">NONE</span>:~#</span>
+                    <input type="text" id="cmd-input" placeholder="Select an agent to execute commands..." disabled>
+                </div>
+            </div>
+
+            <div class="panel files-panel">
+                <div class="panel-header">
+                    <h3>EXFILTRATED DATA</h3>
+                </div>
+                <div class="panel-content" id="files-list">
+                    <!-- Files will be injected here -->
+                    <div class="empty-state">NO FILES CAPTURED...</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

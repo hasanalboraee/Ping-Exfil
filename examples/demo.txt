@@ -1,0 +1,8 @@
+CONFIDENTIAL DATA
+-----------------
+This is a test file for the Ping Exfiltration Framework.
+If you are reading this on the controller, the exfiltration was successful!
+
+User: admin
+Pass: super_secret_password
+IP: 10.0.0.1
